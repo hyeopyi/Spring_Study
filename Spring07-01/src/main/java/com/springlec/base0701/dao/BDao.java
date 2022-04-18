@@ -16,25 +16,20 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 
 import com.springlec.base0701.dto.BDto;
-import com.springlec.base0701.util.Constant;
+
 
 public class BDao {
 
 	JdbcTemplate template;
 	
-//	@Autowired
-//	public void setTemplate(JdbcTemplate template) {
-//		this.template = template;
-//	
-//	}
-//	
-//	public BDao() {
-//		setTemplate(template);
-//	}
+	@Autowired
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;	
+	}	
+
 	
-	public BDao() {
+	public BDao() {		
 		
-		this.template = Constant.template;
 	}
 	
 	
@@ -107,37 +102,7 @@ public class BDao {
 		});
 		
 	}
-//		System.out.println("delete call");
-//		Connection connection = null;
-//		PreparedStatement preparedStatement = null;
-//
-//	
-//		
-//		try {
-//			connection = dataSource.getConnection();
-//			String query = "delete from mvc_board where bId =" + bId;
-//			System.out.println("query " + query);
-//			preparedStatement = connection.prepareStatement(query);	
-//			preparedStatement.executeUpdate();
-//			
-//
-//			
-//		}catch (Exception e) {
-//			e.printStackTrace();
-//		}finally {  // 이상이 있거나 없거나 모두 온다 
-//			try {
-//			
-//				if(preparedStatement != null) preparedStatement.close();
-//				if(connection != null) connection.close();
-//			}catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		
-//	} // delete
-	
-	
-	
+
 	
 	
 } // end

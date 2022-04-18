@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.springlec.base0701.command.BCommand;
-import com.springlec.base0701.util.Constant;
+
 
 
 @Controller
@@ -23,14 +23,6 @@ public class BContorller {
 	private BCommand deleteCommand = null;
 	private BCommand writeCommand = null;
 	private BCommand viewCommand = null;
-	
-	private JdbcTemplate template;
-	
-	@Autowired
-	public void setTemplate(JdbcTemplate template) {
-		this.template = template;
-		Constant.template = this.template;
-	}
 	
 	
 	@Autowired
